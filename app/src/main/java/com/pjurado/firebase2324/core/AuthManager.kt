@@ -52,7 +52,10 @@ class AuthManager(context: Context) {
         }
     }
 
-    fun signOut() = firebaseAuth.signOut()
+    fun signOut(){
+        firebaseAuth.signOut()
+        googleSignInClient.signOut()
+    }
 
     fun getCurrentUser() = firebaseAuth.currentUser
 
